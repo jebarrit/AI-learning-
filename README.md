@@ -1,6 +1,4 @@
-# AI Learning – teknologisk fritidsprojekt
-
-Jeg er under uddannelse til elektriker og arbejder i min fritid med kunstig intelligens, intelligente systemer og digital automatisering. Projektet udspringer af min interesse for teknologi og systematisk problemløsning.
+# AI Learning – projekt
 
 ## Formål
 
@@ -14,11 +12,6 @@ At undersøge, hvordan AI kan anvendes til at organisere viden, løse komplekse 
 - Kildeverifikation, faglig gennemgang og løbende forbedring.
 - Dokumentation, versionsstyring og opgavestyring med GitHub og Trello.
 
-Jeg fastlægger projektets retning, vurderer resultater og træffer beslutninger. AI anvendes som arbejds- og analyseværktøj.
-
-## Relevans for elektrikerfaget
-
-Projektet videreudvikler min erfaring med Lean, systematisk fejlsøgning og kvalitetssikring. Det styrker min forståelse af komplekse systemer, dokumentation og sikkerhed og understøtter min interesse for automation, intelligente installationer og teknisk service.
 
 ## Status
 
