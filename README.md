@@ -21,6 +21,10 @@ At undersøge, hvordan Teknologi kan anvendes til at organisere viden, løse kom
 
 - [IP & Document Management](ip-and-document-management/README.md) – en praktisk tilgang til intellektuelle værdier, dokumentstyring og kontinuerlig udvikling (v0.1).
 
+## Projekter
+
+- [Folketing-spillet](projects/folketing-spillet/README.md) – koncept for politikermatch, blindmatch og politisk strategi med offentlige folketingsdata.
+
 ## Status
 
 Igangværende selvstændigt lærings- og konceptudviklingsprojekt (2026–). Der er ikke tale om et færdigt system. Denne offentlige portfolio beskriver arbejdsmetoder, kompetencer, post-it noter osv.
