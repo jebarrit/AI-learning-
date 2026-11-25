@@ -13,6 +13,10 @@ At undersøge, hvordan AI kan anvendes til at organisere viden, løse komplekse 
 - Dokumentation, versionsstyring og opgavestyring med GitHub og Trello.
 
 
+## Praktisk dokumentation
+
+- [OnePlus 6 – klargøring af en trådløst administreret testtelefon](docs/oneplus-6-lab-setup.md) – genbrug af hardware, systemadministration, sikkerhedskopiering, trådløs adgang, softwareoprydning og dokumenterede funktionstest.
+
 ## Status
 
 Igangværende selvstændigt lærings- og konceptudviklingsprojekt (2026–). Der er ikke tale om et færdigt eller produktionsgodkendt system. Denne offentlige portfolio beskriver arbejdsmetoder og kompetencer; intern dokumentation og tekniske udviklingsdetaljer offentliggøres ikke.
