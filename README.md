@@ -17,6 +17,10 @@ At undersøge, hvordan Teknologi kan anvendes til at organisere viden, løse kom
 
 - [OnePlus 6 – klargøring af en trådløst administreret testtelefon](docs/oneplus-6-lab-setup.md) – genbrug af hardware, systemadministration, sikkerhedskopiering, trådløs adgang, softwareoprydning og dokumenterede funktionstest.
 
+## Arbejdsmetoder
+
+- [IP & Document Management](ip-and-document-management/README.md) – en praktisk tilgang til intellektuelle værdier, dokumentstyring og kontinuerlig udvikling (v0.1).
+
 ## Status
 
 Igangværende selvstændigt lærings- og konceptudviklingsprojekt (2026–). Der er ikke tale om et færdigt system. Denne offentlige portfolio beskriver arbejdsmetoder, kompetencer, post-it noter osv.
