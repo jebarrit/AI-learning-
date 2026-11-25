@@ -2,7 +2,7 @@
 
 ## Formål
 
-At undersøge, hvordan AI kan anvendes til at organisere viden, løse komplekse opgaver og lære af verificerede erfaringer – med fokus på kvalitet, sikkerhed og menneskelig kontrol.
+At undersøge, hvordan Teknologi kan anvendes til at organisere viden, løse komplekse opgaver og lære af verificerede erfaringer – med fokus på kvalitet, sikkerhed og menneskelig kontrol.
 
 ## Mit arbejde
 
@@ -19,4 +19,6 @@ At undersøge, hvordan AI kan anvendes til at organisere viden, løse komplekse 
 
 ## Status
 
-Igangværende selvstændigt lærings- og konceptudviklingsprojekt (2026–). Der er ikke tale om et færdigt eller produktionsgodkendt system. Denne offentlige portfolio beskriver arbejdsmetoder og kompetencer; intern dokumentation og tekniske udviklingsdetaljer offentliggøres ikke.
+Igangværende selvstændigt lærings- og konceptudviklingsprojekt (2026–). Der er ikke tale om et færdigt system. Denne offentlige portfolio beskriver arbejdsmetoder, kompetencer, post-it noter osv.
+
+Intern dokumentation og tekniske udviklingsdetaljer offentliggøres ikke.
