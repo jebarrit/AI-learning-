@@ -17,6 +17,8 @@ At undersøge, hvordan Teknologi kan anvendes til at organisere viden, løse kom
 
 - [OnePlus 6 – klargøring af en trådløst administreret testtelefon](docs/oneplus-6-lab-setup.md) – genbrug af hardware, systemadministration, sikkerhedskopiering, trådløs adgang, softwareoprydning og dokumenterede funktionstest.
 
+- [OnePlus 6 – status for Mobian](docs/oneplus-6-mobian-status.md) – Linux på den genbrugte telefon, verificeret opstart og resultater fra hardwaretest.
+
 ## Arbejdsmetoder
 
 - [IP & Document Management](ip-and-document-management/README.md) – en praktisk tilgang til intellektuelle værdier, dokumentstyring og kontinuerlig udvikling (v0.1).
