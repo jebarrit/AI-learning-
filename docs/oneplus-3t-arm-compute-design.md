@@ -1,13 +1,13 @@
 # OnePlus 3T – ARM-databehandler med fjernadministration
 
-**Version:** 0.2 · offentlig designstatus · 27. november 2026  
+**Version:** 0.3 · offentlig designstatus · 27. november 2026  
 **Status:** Forberedelse og kildeverifikation. Linux er endnu ikke installeret.
 
 ## 1. Formål og afgrænsning
 
 Dette er et selvstændigt teknisk projekt, ikke en fortsættelse, erstatning eller gentagelse af OnePlus 6-forsøgene. Formålet er at etablere en kapabilitet, som de eksisterende OnePlus 6-installationer ikke leverer: en dedikeret, selvstændigt fungerende, fuldt fjernadministrerbar Linux-databehandler til vedvarende drift på tværs af netværk. Enheden betragtes ud fra sine hardwareattributter, ressourcer og kapabiliteter, ikke dens oprindelige produktformål.
 
-Målet er et minimalt Linux-system, der kan administreres fuldt ud over et sikret netværk, fungere uden en permanent tilsluttet værtscomputer og senere udføre forskellige databehandlingsopgaver. En lokal Git- og samarbejdstjeneste er en mulig første arbejdsbelastning, ikke en fast definition af enheden.
+Det primære installationskrav er at erstatte Android/OxygenOS som operativsystem med native Linux. Linux skal starte med egen kernel, initramfs, rootfs og init-system, uden Android-userspace, Android-runtime, Termux, Magisk, container eller chroot oven på Android. Android skal ikke indgå som alternativt driftssystem i den planlagte installation. Nødvendig bootkode, hardwarefirmware og kalibreringsdata kan bevares; de er ikke det samme som Android som operativsystem. Målet er et minimalt Linux-system, der kan administreres fuldt ud over et sikret netværk, fungere uden en permanent tilsluttet værtscomputer og senere udføre forskellige databehandlingsopgaver. En lokal Git- og samarbejdstjeneste er en mulig første arbejdsbelastning, ikke en fast definition af enheden.
 
 ## 2. Selvstændigt projekt og teknisk afgrænsning mod OnePlus 6
 
@@ -16,7 +16,7 @@ Sammenligningen nedenfor afgrænser formål, design og leverancer. Den beskriver
 | Dimension | OnePlus 6: Android-forsøg | OnePlus 6: Mobian-forsøg | OnePlus 3T: dette design |
 |---|---|---|---|
 | Formål | Trådløs administration og afgrænset databehandling under Android | Native Linux og undersøgelse af hardwarefunktioner | Dedikeret, vedvarende og fuldt fjernadministrerbar Linux-databehandling på tværs af netværk |
-| Grundsystem | Android 11, Termux, valgfri Magisk-root | Mobian, Debian 13.1 | Minimal postmarketOS, foreslået |
+| Grundsystem | Android 11, Termux, valgfri Magisk-root | Mobian, Debian 13.1, native Linux | Android erstattes af minimal postmarketOS, foreslået |
 | Kernel | Androids eksisterende kernel | 6.12-sdm845 | Enhedsspecifik MSM8996-kernel, 6.12-serien |
 | Brugerflade | Android | Phosh | Headless; ingen permanent grafisk brugerflade |
 | Administration | SSH som almindelig appbruger, separat root | Linux-opstart og hardwaretest dokumenteret; fjernadministration ikke kvalificeret i den offentlige status | SSH med fuld sudo-adgang for en autoriseret administrator, også over separate netværk |
@@ -46,7 +46,7 @@ Observationerne er fra en konkret enhed, ikke et fuldstændigt hardwarebenchmark
 | Lag | Designvalg |
 |---|---|
 | Distribution | postmarketOS v26.06, AArch64, enhedsprofil `oneplus-oneplus3t` |
-| Boot | Original bootkæde med enhedsspecifik Linux-bootintegration; lk2nd som kandidat |
+| Boot | Nødvendig hardwarebootkode bevares; Linux starter direkte via enhedsspecifik bootintegration; lk2nd som kandidat |
 | Kernel | 6.12.95 som reproduktionsgrundlag, senere vedligeholdt 6.12 LTS-revision til drift |
 | Rootfs | Minimal Linux-installation, ext4 som kandidat |
 | Init | systemd, hvis valgt image og enhedspakker er kompatible |
@@ -75,7 +75,8 @@ Ved gennemgang af referenceprojektets [APKBUILD](https://github.com/arttttt/onep
 
 ## 6. Acceptkriterier
 
-- Første native Linux-opstart og verificeret USB-administration.
+- Første native Linux-opstart og verificeret USB-administration; kontrollér kernel, PID 1, monteret rootfs og procesliste for at påvise selvstændig Linux-drift uden Android-runtime.
+- Verificér at Android/OxygenOS ikke er et aktivt eller nødvendigt driftssystem. Eventuelle resterende Android-systempartitioner identificeres særskilt; fysisk sletning må ikke forveksles med fjernelse af Androids driftsafhængighed. Slet ikke firmware- eller kalibreringspartitioner uden verificeret teknisk grundlag.
 - Stabil Wi-Fi, SSH og fuld administrativ adgang med kontrolleret autentificering.
 - Fjernadgang via et andet netværk, herunder automatisk genopkobling efter netværksudfald, uden afhængighed af en permanent tilsluttet klargøringsvært.
 - Demonstration af den særskilte kapabilitet med en konkret arbejdsbelastning og dokumenteret sammenligning med de eksisterende OnePlus 6-installationer; eventuelle hardwarebegrænsninger skal påvises særskilt.
@@ -117,3 +118,4 @@ Næste trin er at korrigere og verificere buildopskriften og fremstille et minim
 |---|---|---|
 | 0.1 | 2026-11-27 | Formål, sammenligning med tidligere forsøg, verificeret hardware, teknisk design og buildstatus. |
 | 0.2 | 2026-11-27 | Præciseret selvstændigt projekt, særskilt kapabilitetsmål og forskel mellem dokumenteret installationsbegrænsning og uprøvet hardwarebegrænsning. |
+| 0.3 | 2026-11-27 | Native Linux som erstatning for Android; ingen Android-baseret driftsplatform. Tilføjet eksplicit accepttest og afgrænsning mod nødvendig hardwarefirmware. |
