@@ -1,19 +1,21 @@
 # OnePlus 3T – ARM-databehandler med fjernadministration
 
-**Version:** 0.1 · offentlig designstatus · 27. november 2026  
+**Version:** 0.2 · offentlig designstatus · 27. november 2026  
 **Status:** Forberedelse og kildeverifikation. Linux er endnu ikke installeret.
 
 ## 1. Formål og afgrænsning
 
-Dette forsøg undersøger genbrug af en ARM-baseret enhed som generel databehandler. Enheden betragtes ud fra sine hardwareattributter, ressourcer og kapabiliteter, ikke dens oprindelige produktformål.
+Dette er et selvstændigt teknisk projekt, ikke en fortsættelse, erstatning eller gentagelse af OnePlus 6-forsøgene. Formålet er at etablere en kapabilitet, som de eksisterende OnePlus 6-installationer ikke leverer: en dedikeret, selvstændigt fungerende, fuldt fjernadministrerbar Linux-databehandler til vedvarende drift på tværs af netværk. Enheden betragtes ud fra sine hardwareattributter, ressourcer og kapabiliteter, ikke dens oprindelige produktformål.
 
 Målet er et minimalt Linux-system, der kan administreres fuldt ud over et sikret netværk, fungere uden en permanent tilsluttet værtscomputer og senere udføre forskellige databehandlingsopgaver. En lokal Git- og samarbejdstjeneste er en mulig første arbejdsbelastning, ikke en fast definition af enheden.
 
-## 2. Forskel fra de tidligere OnePlus 6-forsøg
+## 2. Selvstændigt projekt og teknisk afgrænsning mod OnePlus 6
+
+Sammenligningen nedenfor afgrænser formål, design og leverancer. Den beskriver forskelle mellem de dokumenterede installationer og det nye kapabilitetsmål, ikke en generel rangordning af hardware. Det er ikke påvist, at OnePlus 6-hardware principielt er ude af stand til at levere samme funktion efter en anden installation. Den specifikke tekniske begrænsning, der gør en sådan løsning uegnet på OnePlus 6, er endnu ikke dokumenteret.
 
 | Dimension | OnePlus 6: Android-forsøg | OnePlus 6: Mobian-forsøg | OnePlus 3T: dette design |
 |---|---|---|---|
-| Formål | Trådløs administration og afgrænset databehandling under Android | Native Linux og undersøgelse af hardwarefunktioner | Generel, selvstændig databehandler med fuld fjernadministration |
+| Formål | Trådløs administration og afgrænset databehandling under Android | Native Linux og undersøgelse af hardwarefunktioner | Dedikeret, vedvarende og fuldt fjernadministrerbar Linux-databehandling på tværs af netværk |
 | Grundsystem | Android 11, Termux, valgfri Magisk-root | Mobian, Debian 13.1 | Minimal postmarketOS, foreslået |
 | Kernel | Androids eksisterende kernel | 6.12-sdm845 | Enhedsspecifik MSM8996-kernel, 6.12-serien |
 | Brugerflade | Android | Phosh | Headless; ingen permanent grafisk brugerflade |
@@ -21,7 +23,7 @@ Målet er et minimalt Linux-system, der kan administreres fuldt ud over et sikre
 | Driftskrav | Kortvarige forsøg over lokal Wi-Fi | Opstart uden USB og filintegritet efter genstart | Selvstændig opstart, automatisk netværksgenopkobling og vedvarende drift |
 | Status | Afprøvet; langtidsstabilitet åben | Afprøvet; flere hardwarefunktioner fortsat åbne | Design og build-forberedelse; ingen Linux-opstart endnu |
 
-De tidligere resultater er dokumenteret i [Android-forsøget](oneplus-6-lab-setup.md) og [Mobian-status](oneplus-6-mobian-status.md). Deres images, bootprocedurer og SoC-specifikke kernelkonfigurationer må ikke genbruges direkte på OnePlus 3T.
+De separate referenceforsøg er dokumenteret i [Android-forsøget](oneplus-6-lab-setup.md) og [Mobian-status](oneplus-6-mobian-status.md). Deres images, bootprocedurer og SoC-specifikke kernelkonfigurationer må ikke genbruges direkte på OnePlus 3T.
 
 ## 3. Verificeret hardwaregrundlag
 
@@ -75,7 +77,8 @@ Ved gennemgang af referenceprojektets [APKBUILD](https://github.com/arttttt/onep
 
 - Første native Linux-opstart og verificeret USB-administration.
 - Stabil Wi-Fi, SSH og fuld administrativ adgang med kontrolleret autentificering.
-- Fjernadgang via et andet netværk, herunder automatisk genopkobling efter netværksudfald.
+- Fjernadgang via et andet netværk, herunder automatisk genopkobling efter netværksudfald, uden afhængighed af en permanent tilsluttet klargøringsvært.
+- Demonstration af den særskilte kapabilitet med en konkret arbejdsbelastning og dokumenteret sammenligning med de eksisterende OnePlus 6-installationer; eventuelle hardwarebegrænsninger skal påvises særskilt.
 - Bevaring af syntetiske testdata og automatisk tjenestestart efter genstart.
 - Kontrolleret temperatur, batterihåndtering og lagerintegritet under længerevarende drift.
 - Afgrænset databehandlingsopgave med uafhængig resultatverifikation.
@@ -88,7 +91,8 @@ En vellykket fjernforbindelse er ikke i sig selv dokumentation for permanent dri
 | Arbejdsområde | Status 27. november 2026 |
 |---|---|
 | Hardwareidentifikation og ADB | Verificeret |
-| Formål og målarkitektur | Design fastlagt |
+| Formål og målarkitektur | Særskilt projekt; foreløbigt kapabilitetsmål og design fastlagt |
+| Specifik teknisk begrænsning på OnePlus 6 | Ikke dokumenteret; må ikke antages |
 | Offentlige kildecommits | Identificeret |
 | Konsistent kernel-buildopskrift | Åben |
 | Panelvariant og lagergeometri | Åben |
@@ -112,3 +116,4 @@ Næste trin er at korrigere og verificere buildopskriften og fremstille et minim
 | Version | Dato | Ændring |
 |---|---|---|
 | 0.1 | 2026-11-27 | Formål, sammenligning med tidligere forsøg, verificeret hardware, teknisk design og buildstatus. |
+| 0.2 | 2026-11-27 | Præciseret selvstændigt projekt, særskilt kapabilitetsmål og forskel mellem dokumenteret installationsbegrænsning og uprøvet hardwarebegrænsning. |
