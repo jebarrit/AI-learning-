@@ -1,6 +1,6 @@
 # OnePlus 3T – ARM-databehandler med fjernadministration
 
-**Version:** 0.3 · offentlig designstatus · 27. november 2026  
+**Version:** 0.4 · offentlig designstatus · 27. november 2026  
 **Status:** Forberedelse og kildeverifikation. Linux er endnu ikke installeret.
 
 ## 1. Formål og afgrænsning
@@ -103,6 +103,28 @@ En vellykket fjernforbindelse er ikke i sig selv dokumentation for permanent dri
 
 Næste trin er at korrigere og verificere buildopskriften og fremstille et minimalt image til første Linux-opstart. Dokumentet opdateres med faktiske resultater efter hver relevant milepæl.
 
+## 8. Hardwarebevarelse uden Android-userspace
+
+Udvidet undersøgelsesmål: bevare størst mulig hardwarefunktionalitet gennem genbrug af producentens firmware, kalibrering og offentlige driverkilde, kombineret med native Linux-drivere. Android HAL-biblioteker er ikke automatisk kompatible med native Linux. En original 3.18-kernel med native rootfs kan være et afgrænset sammenligningsgrundlag, ikke den valgte permanente driftsplatform. Ingen Android-runtime indføres som genvej.
+
+Direkte, læsebaseret undersøgelse af den konkrete enhed viste følgende: Adreno 530-firmwarefiler (a530_pfp, a530_pm4, a530_zap), CPP-kamerafirmware, WLAN-konfigurationsfiler og Android HAL-biblioteker til bl.a. kamera, lyd, GNSS, Bluetooth, NFC, sensorer og strømstyring. Androids sensorservice rapporterede LSM6DS3 accelerometer/gyroskop, MMC3416PJ magnetometer og APDS-9922 lys-/nærhedssensor. Det er et softwareinventar, ikke funktionstest. Nogle firmwareområder kunne ikke læses med de eksisterende ADB-rettigheder; intet er kopieret eller ændret.
+
+Den officielle OnePlus-kernelgren [oneplus/QC8996_P_9.0](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996/tree/oneplus/QC8996_P_9.0) blev identificeret via Git som commit `3a7c7509843471485bb2585d7bc555cec5bf9770`. Grenens fulde overensstemmelse med den installerede A.86-binær og konkrete driverfiler er endnu ikke efterprøvet. Den anvendes som reference for device tree, strømsekvenser, GPIO, clocks, firmware og driverinterfaces.
+
+| Område | Rapporteret native Linux-status / undersøgelsesvej |
+|---|---|
+| USB-netværk, opladning, Wi-Fi, Bluetooth, touch, NFC, USB OTG | Dokumenteret fungerende på postmarketOS' enhedsside; skal reproduceres på denne installation |
+| Skærm, 3D, lyd | Delvist understøttet ifølge enhedssiden; undersøg DRM/MSM, Mesa Freedreno, ALSA/ASoC og originale firmwaredata |
+| GPU-compute | Adreno 530-firmware findes; verificér native compute-API og faktisk beregning. Mesa Turnip understøtter ikke A5xx ifølge driverdokumentationen |
+| Kamera | Qualcomm CAMSS understøtter SoC-familien; begge sensorspecifikke drivere, ISP, strømsekvenser og billedpipeline er åbne |
+| Sensorer | Undersøg original SLPI-firmware og Qualcomm Sensor Manager/QRTR/IIO; direkte I2C-driver er ikke tilstrækkeligt bevis for den faktiske bustopologi |
+| DSP, GNSS, modem, videoaccelerator | Mainline device tree navngiver flere enhedsspecifikke Qualcomm-firmwarefiler; funktion og native userspace skal verificeres særskilt |
+| Fingeraftryk, vibration og øvrige perifere funktioner | Uafklaret |
+
+Prioritet: inventar og afhængigheder før ændring; native opstart og derefter individuelle funktionstest. Skeln mellem fundet fil, tilgængelig driver, initialiseret hardware og verificeret funktion. Bevar nødvendige firmware- og kalibreringspartitioner; licenser og distributionsrettigheder skal kontrolleres før eventuel redistribution af proprietære komponenter. Ingen binære firmwarefiler offentliggøres. Ingen hardwarefunktion er endnu verificeret under den planlagte Linux-installation.
+
+Supplerende kilder: [OnePlus OSS](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996), [mainline device tree](https://linux.googlesource.com/linux/kernel/git/tip/tip/+/refs/heads/perf/urgent/arch/arm64/boot/dts/qcom/msm8996-oneplus3t.dts), [CAMSS](https://docs.kernel.org/6.1/admin-guide/media/qcom_camss.html), [Mesa Freedreno](https://docs.mesa3d.org/drivers/freedreno.html), [Qualcomm Sensor Manager patchserie](https://lists.openwall.net/netdev/2025/07/10/97), [libhybris](https://github.com/libhybris/libhybris/blob/master/README.md) (sammenligningsgrundlag, ikke designvalg).
+
 ## Kilder
 
 - [postmarketOS: OnePlus 3T](https://wiki.postmarketos.org/wiki/OnePlus_3T_(oneplus-oneplus3t))
@@ -119,3 +141,4 @@ Næste trin er at korrigere og verificere buildopskriften og fremstille et minim
 | 0.1 | 2026-11-27 | Formål, sammenligning med tidligere forsøg, verificeret hardware, teknisk design og buildstatus. |
 | 0.2 | 2026-11-27 | Præciseret selvstændigt projekt, særskilt kapabilitetsmål og forskel mellem dokumenteret installationsbegrænsning og uprøvet hardwarebegrænsning. |
 | 0.3 | 2026-11-27 | Native Linux som erstatning for Android; ingen Android-baseret driftsplatform. Tilføjet eksplicit accepttest og afgrænsning mod nødvendig hardwarefirmware. |
+| 0.4 | 2026-11-27 | Direkte hardware-/firmwareinventar, original kernelkilde og undersøgelsesplan for maksimal native hardwareunderstøttelse. |
