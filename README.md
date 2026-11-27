@@ -19,7 +19,7 @@ At undersøge, hvordan Teknologi kan anvendes til at organisere viden, løse kom
 
 - [OnePlus 6 – status for Mobian](docs/oneplus-6-mobian-status.md) – Linux på den genbrugte telefon, verificeret opstart og resultater fra hardwaretest.
 
-- [OnePlus 3T – ARM-databehandler med fjernadministration](docs/oneplus-3t-arm-compute-design.md) – selvstændigt teknisk projekt med særskilt kapabilitetsmål: vedvarende, fuldt fjernadministrerbar Linux-databehandling på tværs af netværk. Design og build-forberedelse; endnu ikke afprøvet.
+- [OnePlus 3T – ARM-databehandler med fjernadministration](docs/oneplus-3t-arm-compute-design.md) – selvstændigt teknisk projekt: erstatning af Android med native Linux til vedvarende, fuldt fjernadministrerbar databehandling på tværs af netværk. Design og build-forberedelse; endnu ikke afprøvet.
 
 ## Arbejdsmetoder
 
