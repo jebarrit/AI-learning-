@@ -19,6 +19,8 @@ At undersøge, hvordan Teknologi kan anvendes til at organisere viden, løse kom
 
 - [OnePlus 6 – status for Mobian](docs/oneplus-6-mobian-status.md) – Linux på den genbrugte telefon, verificeret opstart og resultater fra hardwaretest.
 
+- [OnePlus 3T – ARM-databehandler med fjernadministration](docs/oneplus-3t-arm-compute-design.md) – designstatus, forskelle fra OnePlus 6-forsøgene, verificeret hardware og reproducerbar build-forberedelse.
+
 ## Arbejdsmetoder
 
 - [IP & Document Management](ip-and-document-management/README.md) – en praktisk tilgang til intellektuelle værdier, dokumentstyring og kontinuerlig udvikling (v0.1).
