@@ -19,15 +19,21 @@ At undersøge, hvordan Teknologi kan anvendes til at organisere viden, løse kom
 
 - [OnePlus 6 – status for Mobian](docs/oneplus-6-mobian-status.md) – Linux på den genbrugte telefon, verificeret opstart og resultater fra hardwaretest.
 
-- [OnePlus 3T – ARM-databehandler med fjernadministration](docs/oneplus-3t-arm-compute-design.md) – selvstændigt teknisk projekt: erstatning af Android med native Linux til vedvarende, fuldt fjernadministrerbar databehandling på tværs af netværk. Design og build-forberedelse; endnu ikke afprøvet.
+- [OnePlus 3T – ARM-databehandler med fjernadministration](docs/oneplus-3t-arm-compute-design.md) – selvstændigt teknisk projekt: erstatning af Android med native Linux til vedvarende, fuldt fjernadministrerbar databehandling på tværs af netværk. Design og build-forberedelse; buildmiljø installeret, men enhedens native Linux-installation endnu ikke afprøvet.
+
+## Buildmiljø
+
+- [Buildmiljø – reproducerbar softwareudvikling](docs/build-environment.md) – etablering af et Linux-baseret udviklingsmiljø, dokumenteret grundlæggende fjernadministration og metode for kvalifikation af værktøjskæde, ARM64-build og artefakter.
 
 ## Arbejdsmetoder
 
-- [IP & Document Management](ip-and-document-management/README.md) – en praktisk tilgang til intellektuelle værdier, dokumentstyring og kontinuerlig udvikling (v0.1).
+- [IP & Document Management](ip-and-document-management/README.md) – en praktisk tilgang til intellektuelle værdier, dokumentstyring og kontinuerlig udvikling (v0.2), suppleret med generel AI-bedømmelse og bevaring.
 
 ## Projekter
 
 - [Folketing-spillet](projects/folketing-spillet/README.md) – koncept for politikermatch, blindmatch og politisk strategi med offentlige folketingsdata.
+
+- [Tommelfinger Finans](projects/tommelfinger-finans/README.md) – kilde- og beregningsgrundlag for pension og livsforsikring.
 
 ## Status
 

@@ -1,6 +1,6 @@
 # OnePlus 3T – ARM-databehandler med fjernadministration
 
-**Version:** 0.4 · offentlig designstatus · 27. november 2026  
+**Version:** 0.5 · offentlig designstatus · 28. november 2026  
 **Status:** Forberedelse og kildeverifikation. Linux er endnu ikke installeret.
 
 ## 1. Formål og afgrænsning
@@ -125,6 +125,14 @@ Prioritet: inventar og afhængigheder før ændring; native opstart og derefter 
 
 Supplerende kilder: [OnePlus OSS](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996), [mainline device tree](https://linux.googlesource.com/linux/kernel/git/tip/tip/+/refs/heads/perf/urgent/arch/arm64/boot/dts/qcom/msm8996-oneplus3t.dts), [CAMSS](https://docs.kernel.org/6.1/admin-guide/media/qcom_camss.html), [Mesa Freedreno](https://docs.mesa3d.org/drivers/freedreno.html), [Qualcomm Sensor Manager patchserie](https://lists.openwall.net/netdev/2025/07/10/97), [libhybris](https://github.com/libhybris/libhybris/blob/master/README.md) (sammenligningsgrundlag, ikke designvalg).
 
+## 9. Buildmiljø – status 28. november 2026
+
+Et særskilt Linux-baseret buildmiljø er nu installeret, og grundlæggende autentificeret fjernadministration er verificeret. Det skaber et grundlag for næste trin i kilde- og buildarbejdet, men værktøjskæden er endnu ikke kvalificeret til denne enhed.
+
+Den tidligere kildereviewede uoverensstemmelse i buildopskriften skal fortsat håndteres, før et installationsimage kan fremstilles. Der er ikke dokumenteret et færdigt image eller native Linux-opstart på OnePlus 3T i denne opdatering. Hardwarefirmware og kalibreringsdata skal beskyttes under det videre arbejde; kildeidentifikation og buildstatus er ikke bevis for hardwarefunktion.
+
+Se [Buildmiljø – reproducerbar softwareudvikling](build-environment.md) for den generelle fremgangsmåde.
+
 ## Kilder
 
 - [postmarketOS: OnePlus 3T](https://wiki.postmarketos.org/wiki/OnePlus_3T_(oneplus-oneplus3t))
@@ -142,3 +150,4 @@ Supplerende kilder: [OnePlus OSS](https://github.com/OnePlusOSS/android_kernel_o
 | 0.2 | 2026-11-27 | Præciseret selvstændigt projekt, særskilt kapabilitetsmål og forskel mellem dokumenteret installationsbegrænsning og uprøvet hardwarebegrænsning. |
 | 0.3 | 2026-11-27 | Native Linux som erstatning for Android; ingen Android-baseret driftsplatform. Tilføjet eksplicit accepttest og afgrænsning mod nødvendig hardwarefirmware. |
 | 0.4 | 2026-11-27 | Direkte hardware-/firmwareinventar, original kernelkilde og undersøgelsesplan for maksimal native hardwareunderstøttelse. |
+| 0.5 | 2026-11-28 | Tilføjet buildmiljøets etableringsmilepæl og afgrænsning mod faktisk ARM64-build og installation. |
