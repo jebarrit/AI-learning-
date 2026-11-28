@@ -148,7 +148,7 @@ Se [buildmiljøet](../docs/build-environment.md) for et praktisk eksempel på, h
 
 | Version | Dato | Ændring |
 | --- | --- | --- |
-| 0.1 | 2026-11-24 | Første offentlige metodebeskrivelse. |
+| 0.1 | 2026-11-25 | Første offentlige metodebeskrivelse. |
 | 0.2 | 2026-11-28 | Suppleret med generelle principper for AI-bedømmelse og bevaring. De ni oprindelige metodeafsnit videreføres. |
 
 ## Status
