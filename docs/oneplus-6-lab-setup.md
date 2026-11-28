@@ -1,8 +1,10 @@
 # OnePlus 6 – klargøring af en trådløst administreret testtelefon
 
-**Version:** 1.0 · offentlig udgave · 25. november 2026  
+**Version:** 1.1 · offentlig udgave · 28. november 2026  
 **Status:** Laboratorieprocedure, ikke produktionsinstallation  
 **Formål:** Dokumentere og gentage klargøringen af en ældre OnePlus 6 til trådløs administration, med reduceret Google-afhængighed og et lokalt arbejdsområde til tekniske forsøg.
+
+> **Historisk afgrænsning, 28. november 2026:** Denne guide dokumenterer Android-forsøget. En senere separat installation af native Linux beskrives i [Mobian-status](oneplus-6-mobian-status.md). Guidens kommandoer og images er ikke beregnet til den senere Linux-installation eller andre telefonmodeller. Ingen nye installationstest er udført i denne dokumentationsrevision.
 
 ## Resultat i korte træk
 
@@ -535,4 +537,6 @@ com.google.android.setupwizard
 - Android modular system: https://source.android.com/docs/core/ota/modular-system
 - Android CellBroadcast: https://source.android.com/docs/core/ota/modular-system/cellbroadcast
 
-**Slut på offentlig guide v1.0.**
+**Ændring i v1.1:** Tilføjet historisk afgrænsning og henvisning til Mobian-status. Vejledningens kommandoer, historiske forsøgsdata og risikobeskrivelse er bevaret.
+
+**Slut på offentlig guide v1.1.**
