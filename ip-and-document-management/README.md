@@ -2,7 +2,7 @@
 
 *En praktisk tilgang til intellektuelle værdier, dokumentstyring og kontinuerlig udvikling.*
 
-**Version:** 0.1
+**Version:** 0.2 · 28. november 2026
 
 ## Formål
 
@@ -121,6 +121,35 @@ Metoden bygger på principper fra Lean, Toyota Production System, systematisk pr
 Også selve dokumentstyringsmetoden skal kunne udfordres, efterprøves og forbedres.
 
 Ændringer skal udspringe af et identificeret behov, konkrete erfaringer eller ny viden.
+
+## 10. Uafhængig kontrol af AI-assisteret arbejde
+
+AI kan anvendes som faglig kontrollant, men et AI-genereret resultat bliver ikke verificeret alene ved, at en anden AI er enig.
+
+En generel metode til bedømmelse er at:
+
+- Afprøve bedømmernes kriterieforståelse med fiktive eksempler og på forhånd fastlagte forventninger.
+- Anvende samme bedømmelsesgrundlag og så vidt muligt skjule svarenes oprindelse.
+- Indsamle uafhængige vurderinger, inden bedømmerne får adgang til hinandens resultater.
+- Kontrollere beregninger, logik og relevante kilder direkte, hvor det er muligt.
+- Bevare afvigelser, usikkerhed og uenigheder. Flertalsenighed er ikke i sig selv sandhedsbevis.
+
+En lille kalibrering viser alene, hvordan bedømmerne klarede de konkrete eksempler. Den dokumenterer ikke generel kompetence eller menneskelig validering. Ved ekstern AI-anvendelse skal tjenestens datavilkår og rettigheder til input vurderes særskilt. Anonymisering erstatter ikke en frigivelsesvurdering.
+
+## 11. Bevaring af udviklingsgrundlaget
+
+Skeln mellem materiale, der kan genanskaffes fra offentlige kilder, og unikke originaler, der ikke uden videre kan genskabes. Prioritér dokumenteret bevaring af unikke originaler og udviklingshistorik. En rekonstruktion af kildekode er ikke det samme som gendannelse af den faktiske arbejdstilstand.
+
+Git-versioner og samarbejdsplatformens diskussioner er forskellige informationsobjekter. Ved planlægning af bevaring bør begge vurderes sammen med ikke-committede filer og relevante data. En integritetskontrol af en backup erstatter ikke en gendannelsesprøve.
+
+Se [buildmiljøet](../docs/build-environment.md) for et praktisk eksempel på, hvordan installation, build, funktionsprøve og dokumentation behandles som forskellige milepæle.
+
+## Ændringshistorik
+
+| Version | Dato | Ændring |
+| --- | --- | --- |
+| 0.1 | 2026-11-24 | Første offentlige metodebeskrivelse. |
+| 0.2 | 2026-11-28 | Suppleret med generelle principper for AI-bedømmelse og bevaring. De ni oprindelige metodeafsnit videreføres. |
 
 ## Status
 
